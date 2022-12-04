@@ -1,0 +1,15 @@
+# Maven #
+**/mvnw
+**/mvnw.cmd
+**/.mvn
+**/target/
+
+
+# IDEA #
+.idea/
+*.iml
+
+# Eclipse #
+.settings/
+.classpath
+.project
