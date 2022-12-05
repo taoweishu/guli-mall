@@ -3,9 +3,9 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <artifactId>com.tws.mall</artifactId>
-    <packaging>pom</packaging>
     <groupId>mall</groupId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
     <modelVersion>4.0.0</modelVersion>
     <name>mall</name>
     <modules>
@@ -14,6 +14,8 @@
         <module>mall-order</module>
         <module>mall-member</module>
         <module>mall-coupon</module>
+        <module>renren-fast</module>
+        <module>renren-generator</module>
         <module>mall-common</module>
     </modules>
 

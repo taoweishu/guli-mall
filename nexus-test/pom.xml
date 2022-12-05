@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>com.tws.mall</artifactId>
+        <groupId>mall</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>nexus-test</artifactId>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+    <dependencies>
+    </dependencies>
+    <distributionManagement>
+        <repository>
+            <!--和maven/settings.xml中server中的id一致，表示使用该id对应的用户名和密码-->
+            <id>test-release</id>
+            <!--如果jar的版本是release版本，那么就上传到这个仓库，根据自己情况修改-->
+            <url>http://192.168.116.101:8081/repository/test-release/</url>
+        </repository>
+        <snapshotRepository>
+            <!--和maven/settings.xml中server中的id一致，表示使用该id对应的用户名和密码-->
+            <id>test-snapshot</id>
+            <!--如果jar的版本是snapshot版本，那么就上传到这个仓库，根据自己情况修改-->
+            <url>http://192.168.116.101:8081/repository/test-snapshot/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+</project>
