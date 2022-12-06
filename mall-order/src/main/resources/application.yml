@@ -1,4 +1,10 @@
 spring:
+  application:
+    name: mall-order
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
   datasource:
     username: root
     password: root

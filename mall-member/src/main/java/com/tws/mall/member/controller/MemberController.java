@@ -1,12 +1,14 @@
 package com.tws.mall.member.controller;
 
 import com.tws.mall.member.entity.MemberEntity;
+import com.tws.mall.member.feign.CouponFeignService;
 import com.tws.mall.member.service.MemberService;
 import com.tws.mall.utils.PageUtils;
 import com.tws.mall.utils.R;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
 import java.util.Arrays;
 import java.util.Map;
 
@@ -24,6 +26,18 @@ import java.util.Map;
 public class MemberController {
     @Autowired
     private MemberService memberService;
+    @Resource
+    private CouponFeignService couponFeignService;
+
+    @RequestMapping("/coupon/list")
+    public R memberCoupons() {
+        MemberEntity member = new MemberEntity();
+        member.setNickname("张三");
+
+        R memberCoupons = couponFeignService.memberCoupons();
+
+        return R.ok().put("member", member).put("coupons", memberCoupons.get("coupons"));
+    }
 
     /**
      * 列表

@@ -1,4 +1,11 @@
 spring:
+  application:
+    name: mall-member
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        namespace: 20f85521-d79d-4c9b-a038-29de85173330
   datasource:
     username: root
     password: root
@@ -15,4 +22,4 @@ mybatis-plus:
       id-type: auto
 
 server:
-  port: 80001
+  port: 8001

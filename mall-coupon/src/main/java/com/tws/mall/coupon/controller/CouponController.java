@@ -77,4 +77,11 @@ public class CouponController {
         return R.ok();
     }
 
+    @RequestMapping("/member/list")
+    public R memberCouponList() {
+        CouponEntity couponEntity = new CouponEntity();
+        couponEntity.setCouponName("测试优惠券");
+        return R.ok().put("coupons", couponEntity);
+    }
+
 }
