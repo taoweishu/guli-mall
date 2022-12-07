@@ -1,11 +1,11 @@
 spring:
   application:
-    name: mall-gateway
+    name: mall-order
   cloud:
     nacos:
       config:
         namespace: 20f85521-d79d-4c9b-a038-29de85173330
         group: DEFAULT_GROUP
         server-addr: localhost:8848
-        name: mall-gateway
+        name: mall-order
         file-extension: yaml

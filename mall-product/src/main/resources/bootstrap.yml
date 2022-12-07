@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: mall-product
+  cloud:
+    nacos:
+      config:
+        name: mall-product
+        file-extension: yaml
+        server-addr: localhost:8848
+        namespace: 20f85521-d79d-4c9b-a038-29de85173330
+        group: DEFAULT_GROUP
