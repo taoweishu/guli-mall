@@ -46,6 +46,22 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity
         return collect;
     }
 
+    @Override
+    public void removeMenuByIds(List<Long> ids) {
+        for (Long id : ids) {
+            QueryWrapper<CategoryEntity> queryWrapper = new QueryWrapper<>();
+            queryWrapper.lambda().eq(CategoryEntity::getParentCid, id);
+            List<CategoryEntity> categoryEntities = categoryDao.selectList(queryWrapper);
+            if (!categoryEntities.isEmpty()) {
+
+            }
+
+        }
+        int result = categoryDao.deleteBatchIds(ids);
+        log.info("删除条数：{}", result);
+
+    }
+
     private List<CategoryEntity> getChildren(CategoryEntity category, List<CategoryEntity> categoryEntities) {
         List<CategoryEntity> collect = categoryEntities.stream().filter(category1 -> {
             return category1.getParentCid().equals(category.getCatId());
